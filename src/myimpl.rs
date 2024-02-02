@@ -1,8 +1,26 @@
-use pyo3::pyclass;
+#[cfg(feature = "wasm-bindgen")]
 use wasm_bindgen::prelude::*;
 
+#[cfg(all(feature = "wasm-bindgen", not(feature="pyo3")))]
 #[wasm_bindgen]
+#[derive(Debug)]
+pub struct MyType{
+    info: u32,
+    name: String,
+}
+
+#[cfg(feature = "pyo3")]
+use pyo3::pyclass;
+
+#[cfg(all(feature = "pyo3", not(feature="wasm-bindgen")))]
 #[pyclass]
+#[derive(Debug)]
+pub struct MyType{
+    info: u32,
+    name: String,
+}
+
+#[cfg(all(not(feature = "wasm-bindgen"), not(feature = "pyo3")))]
 #[derive(Debug)]
 pub struct MyType{
     info: u32,
