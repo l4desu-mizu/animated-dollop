@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {MyType} from 'multilang_playground';
+import init, {MyType} from 'multilang_playground';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +12,7 @@ import {MyType} from 'multilang_playground';
 export class AppComponent implements OnInit {
   title = 'my_ui';
   async ngOnInit(){
+    await init();
     const a = new MyType(5, "test");
     console.log(a.do_stuff());
   }

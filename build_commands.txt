@@ -6,3 +6,6 @@ wasm-pack build --target web -- --features wasm-bindgen
  - build node package (with web as target, pass features to cargo)
 wasm-pack pack
  - package node package
+
+
+additional configs (angular)?
