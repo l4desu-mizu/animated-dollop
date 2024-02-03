@@ -11,6 +11,7 @@ wasm-pack pack
 
 
 custom webpack options https://github.com/just-jeb/angular-builders/blob/master/packages/custom-webpack/README.md
+requires custom webpack builder/server, however this enabled the dev server to function \o/ 09d6cc2dc9b223abfdd4dd635681de457c9402f6
 additional configs (angular)?  # disclaimer: did not help
  - install custom-webpack as builder
  - add custom webpack conf to augment wasm, add this to builder options:
