@@ -1,0 +1,18 @@
+the good:
+ - write once run anywhere (anders als bei einigen c bibliotheken in python scheint das erzeugte artefakt die completion der ide nicht zu behindern, same for angular+wasm)
+ - it "just works" (ide integration and running excutable)
+ - seamless integration - der Nutzer der Bibliothek sieht/weis nicht, dass es rust code ist, der ausgeführt wird. es sieht aus wie [hier sprache einsetzen]
+ - potentielle erweiterbarkeit der exporte in andere sprachen (e.g. c-bindings müssten auch möglich sein)
+
+the bad:
+ - what if [bind] drops or upgrades:
+   - es ist unklar wie aufwändig ein update der binding lib ist (initial war es sehr straight forward, daher habe ich hoffnung)
+   - pyo3 ist nicht der erste ansatz rust und python zu verheiraten und native rust-python bibliotheken werden auch (wohl) schon aktiv entwickelt - hier besteht hoffnung, dass dieser ansatz in einer form bestehen bleibt
+   - wasm-bindgen ist schon sehr weit im rust-ökosystem verbreitet und wird von einigen größeren projekten aktiv verwendet -> probably "here to stay"
+
+the ugly:
+ - boilerplate macros with possibly necessary conditions for exclusion (although this might be configurable per target instead of feature-based)
+    - hier ist der boilerplate für den python export etwas umfangreicher
+    - im gegenzug muss im angular teil eine entsprechende konfiguration für wasm vorliegen, damit die applikation auch ausgerollt werden kann
+ - build config
+ - ausgiebiges prüfen ob die genutzen abhängigkeiten auch für die zielumgebung gemacht sind (wird üblicherweise bereits beim build klar, da das buildsystem ein entsprechendes artefakt bauen möchte)
