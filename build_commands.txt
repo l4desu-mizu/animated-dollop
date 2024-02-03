@@ -1,0 +1,8 @@
+maturin init
+ - setup project
+maturin build --features pyo3
+ - build python package
+wasm-pack build --features wasm-bindgen
+ - build node package
+wasm-pack pack
+ - package node package
