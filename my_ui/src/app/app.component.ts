@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import init, {MyType} from 'multilang_playground';
 
+await init(); // only possible if topLevelAwait is configured with webpack, otherwise should be called on init
+
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -11,8 +14,7 @@ import init, {MyType} from 'multilang_playground';
 })
 export class AppComponent implements OnInit {
   title = 'my_ui';
-  async ngOnInit(){
-    await init();
+  ngOnInit(){
     const a = new MyType(5, "test");
     console.log(a.do_stuff());
   }
