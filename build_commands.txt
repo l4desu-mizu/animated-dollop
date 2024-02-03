@@ -10,6 +10,7 @@ wasm-pack pack
  - package node package
 
 
+custom webpack options https://github.com/just-jeb/angular-builders/blob/master/packages/custom-webpack/README.md
 additional configs (angular)?  # disclaimer: did not help
  - install custom-webpack as builder
  - add custom webpack conf to augment wasm, add this to builder options:
@@ -26,3 +27,18 @@ Current state:
  - package can be build
  - for angular/bundled apps 'bundler'-target seems to be the correct option
  - I need to find a magic option that just adds the wasm to the final ui-build
+
+
+
+relevant links:
+for webpack config:
+    https://webpack.js.org/configuration
+
+all wasm import issues (somewhat related to angular):
+https://github.com/rustwasm/wasm_game_of_life/issues/47
+https://github.com/rustwasm/wasm-bindgen/issues/1559
+https://github.com/rustwasm/wasm_game_of_life/issues/47
+https://github.com/angular/angular-cli/issues/14987
+
+might be something to investigate trying to get a single file:
+https://github.com/rustwasm/wasm-pack/issues/699
