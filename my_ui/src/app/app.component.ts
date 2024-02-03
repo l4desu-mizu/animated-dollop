@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import init, {MyType} from 'multilang_playground';
+import {MyType} from 'multilang_playground';
 
-await init(); // only possible if topLevelAwait is configured with webpack, otherwise should be called on init
+// for web target
+//import init, {MyType} from 'multilang_playground';
+//await init(); // only possible if topLevelAwait is configured with webpack, otherwise should be called on init
+// but this will try to fetch the wasm from a server as it assumes to be a simple web application
 
 
 @Component({

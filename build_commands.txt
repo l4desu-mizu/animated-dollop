@@ -2,8 +2,10 @@ maturin init
  - setup project
 maturin build --features pyo3
  - build python package
-wasm-pack build --target web -- --features wasm-bindgen
+wasm-pack build --target bundler -- --features wasm-bindgen
  - build node package (with web as target, pass features to cargo)
+ - for angular applications bundler seems to be better as it integrates better with webpack (web is thought to be a remote place for your wasm but not be bundled in the end)
+    -> https://github.com/rustwasm/wasm-bindgen/issues/1559
 wasm-pack pack
  - package node package
 
@@ -19,3 +21,8 @@ additional configs (angular)?  # disclaimer: did not help
         }
       }
     },
+
+Current state:
+ - package can be build
+ - for angular/bundled apps 'bundler'-target seems to be the correct option
+ - I need to find a magic option that just adds the wasm to the final ui-build
