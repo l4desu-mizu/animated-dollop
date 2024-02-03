@@ -8,4 +8,14 @@ wasm-pack pack
  - package node package
 
 
-additional configs (angular)?
+additional configs (angular)?  # disclaimer: did not help
+ - install custom-webpack as builder
+ - add custom webpack conf to augment wasm, add this to builder options:
+    "customWebpackConfig": {
+      "path": "./extra-webpack.config.js",
+      "mergeRules": {
+        "module": {
+          "rules": "prepend"
+        }
+      }
+    },
